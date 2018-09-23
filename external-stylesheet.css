@@ -1,0 +1,112 @@
+body{
+	background:url("./css/res/img/banner.jpg") center / cover;
+	height:40em;
+}
+.nav{
+	position:relative;
+	width:5em;
+	display:inline;
+}
+#profile{
+	left:60%;
+}
+#project{
+	left:65%;
+}
+#other{
+	left:70%;
+}
+div{
+	display:relative;
+}	
+.icons{
+	position:absolute;
+	display:inline;
+	right:2em;
+	top:30%;
+	width:3em;
+	color:white;
+}
+.material-icons{
+	padding:10px 0px 10px 0px;
+}
+.material-icons:hover{
+	color:lightblue;
+	font-size:5em;
+}
+.menu{
+	height:500px;
+	padding:20% 10% 0% 10%;
+}
+.menu, .row{
+	position:relative;
+	display:block;
+	margin:0%;
+}
+.title{
+	margin:0%;
+	width:35em;
+}
+.eng_name{
+	font-size:5em;
+	text-align:left;
+}
+.ch_name{
+	top:0;
+	font-size:1em;
+	text-align:right;
+}
+.introduction{
+	display:inline-block;
+	width:20em;
+}
+.subject_header{
+	position:absolute;
+	display:inline-block;
+	width:40%;
+	right:0;
+	bottom:0;
+	padding:0 150px 0 0;
+}
+.subject{
+	display:inline-block;
+	width:10em;
+	float:right;
+	font-size:1.2em;
+}
+.decoration{
+	position:absolute;
+	display:block;
+	background-color:white;
+}
+.bar{
+	height:3px;
+	width:100%;
+}
+.box{
+	height:50px;
+	width:150px;
+	right:0;
+	font-family:"Arial";
+	color:black;
+	text-align:center;
+	font-size:1em;
+}
+.font{
+	position:relative;
+	color:white;
+	font-family:"微軟正黑體";
+}
+.contant{
+	text-align:left;
+	padding:5px;
+	margin:0em;
+}
+a:link, a:visited{
+	color:white;
+	text-decoration:none;
+}
+a:hover {
+	color:yellow;
+    text-decoration: underline;
+}
