@@ -1,6 +1,9 @@
 $('.curtain').each(function( index, value ) {
 	$(this).css('margin-left', ((index+1)*20).toString() + '%');
 });
+$('.curtain_thin').each(function( index, value ) {
+	$(this).css('margin-left', ((index+1)*20).toString() + '%');
+});
 //$('.eng_name').css({'font-size':'0em'});
 $('.bar').css({width:'0%'});
 $('.box').css({opacity:'0%', height:'0%'});
