@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Lookup System</title>
+  </head>
+  <body>
+    <form id="list_student">
+      <button type="submit">List All Students</button>
+      <h3 id="content"></h3>
+    </form>
+    <form id="search_student">
+      Student ID: <input type="text" name="student_id"><br>
+      <button type="submit">Search Specific Student</button>
+      <h3 id="content"></h3>
+    </form>
+    <form id="add_student">
+      Student ID: <input type="text" name="student_id"><br>
+      Student Name: <input type="text" name="student_name"><br>
+      <button type="submit">Add New Student</button>
+    </form>
+      <form id="del_student">
+      Student ID: <input type="text" name="student_id"><br>
+      <button type="submit">Delete Specific Student</button>
+    </form>
+    <p id="message"></p>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
+
