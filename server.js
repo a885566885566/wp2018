@@ -1,19 +1,63 @@
 const express = require('express')
 const app = express()
-const port = 10418
+const port = 10418;
+const studentInfoFilename = 'student_info.json';
+var fs = require("fs");
+var studentInfoObj = fs.readFileSync(studentInfoFilename);
+var studentInfo = JSON.parse(studentInfoObj);
+
+function findItem(target, studentInfo){
+  for(item in studentInfo)
+    if(target == item)
+      return true;
+  return false;
+}
 
 app.use(express.static(__dirname + '/public'))
-//app.get('/', function(req, res) {
-//  res.send('<h1>Hello, ${req.query.student_id}')})
 console.log("Prepare done");
-var words = 'words';
+
 app.get("/search_student_send", function(req, res){
   console.log("Get search_student request");
-  res.send(`Hello, ${req.query.student_id}`)
-  console.log(`${req.query.student_id} ${words} Data sent`);
+  if(findItem(req.query.student_id, studentInfo)){
+    res.send(`Hello, ${studentInfo[req.query.student_id]}`);
+    console.log(`ID=${req.query.student_id} Name=${studentInfo[req.query.student_id]} Login`);
+  }
+  else{
+    res.send(`ID= ${studentInfo[req.query.student_id]} not found`);
+    console.log(`ID=${req.query.student_id} try to login but not found`);
+  }
 })
+
 app.get("/list_student_req", function(req, res){
   console.log("Get list_student request");
-  res.send("data data");
+  var str = '';
+  for(item in studentInfo)
+    str += item + ':' + studentInfo[item] + "<br>\n";
+  console.log(str);
+  res.send(str);
 })
+app.get("/add_student_req", function(req, res){
+  console.log("Get add_student request");
+  if(findItem(req.query.student_id, studentInfo))
+    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} already found`);
+  else{
+    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} added successfully`);
+    studentInfo[req.query.student_id] = req.query.student_name;
+  }
+  res.send(messages);
+  console.log(messages);
+ })
+
+app.get("/del_student_req", function(req, res){
+  console.log("Get del_student request");
+  if(findItem(req.query.student_id, studentInfo)){
+    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} deleted`);
+    delete studentInfo[req.query.student_id];
+  }
+  else
+    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} not found`);
+  res.send(messages);
+  console.log(messages);
+})
+
 app.listen(port)
