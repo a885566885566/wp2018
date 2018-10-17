@@ -1,0 +1,60 @@
+body{
+  background-color: rgb(30, 20, 30);
+}
+#main{
+  padding: 5% 10% 5% 10%;
+}
+.questionFont, #nav{
+  font-family: 'Arial';
+  color: rgb(255, 255, 150);
+  font-size: 2em;
+  margin: 15px 0px 5px 0px;
+}
+.warningFont{
+  font-family: 'Arial';
+  color: rgb(200, 10, 10);
+  font-size: 3em;
+}
+#nav{
+  font-size: 3em;
+  color: rgb(150, 120, 50);
+  text-align: center;
+}
+.questionColumn{
+  margin: 1em 0 0 1em;
+  padding: 0em 10em 2em 10em;
+  text-align: center;
+  border-style: dotted;
+  border-width: 5px;
+  border-color: rgb(100, 70, 70);
+  border-radius: 30px;
+}
+#content{
+  font-size: 1em;
+}
+button{
+  margin: 5px;
+  width: 15em;
+  color: rgb(200, 150, 150);
+  background-color: rgb(100, 70, 70);
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px 30px 10px 30px;
+  border: 5px solid rgb(50, 30, 30);
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+button:hover{
+  background-color: rgb(50, 30, 30);
+}
+input{
+  width: 20em;
+  height: 2em;
+  font-size: 1em;
+  border: none;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+input:hover{
+  border: 5px, solid, rgb(100, 10, 200);
+}

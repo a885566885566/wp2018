@@ -9,7 +9,7 @@ $(document).ready(function(){
         student_id: $("#search_student input[name='student_id']").val()
       },
       success: function(data){
-        $("#search_student #content").text(data);
+        $("#search_student #content").html(data);
     }})
   })
   $("#list_student button").click(function(event) {
@@ -19,6 +19,12 @@ $(document).ready(function(){
       url: "./list_student_req",
       success: function(data){
         $("#list_student #content").html(data);
+        $("#list_student #contentDiv").css({height: "0em", overflow:"hidden"});
+        $("#list_student #contentDiv").animate({
+          height: "25em",
+          overflow: "scroll",
+          opacity: 1
+        }, 1000);
       }
     })
   })

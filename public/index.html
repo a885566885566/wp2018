@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="app.css">
     <title>Student Lookup System</title>
   </head>
   <body>
-    <form id="list_student">
-      <button type="submit">List All Students</button>
-      <p id="content"></p>
-    </form>
-    <form id="search_student">
-      Student ID: <input type="text" name="student_id"><br>
-      <button type="submit">Search Specific Student</button>
-      <h3 id="content"></h3>
-    </form>
-    <form id="add_student">
-      Student ID: <input type="text" name="student_id"><br>
-      Student Name: <input type="text" name="student_name"><br>
-      <button type="submit">Add New Student</button>
-    </form>
-      <form id="del_student">
-      Student ID: <input type="text" name="student_id"><br>
-      <button type="submit">Delete Specific Student</button>
-    </form>
-    <p id="message"></p>
-
+    <div id="main">
+      <h1 id="nav">Student Lookup System</h1>
+      <div class="questionColumn">
+        <form id="list_student">
+          <button type="submit">List All Students</button>
+          <div id="contentDiv">
+            <p class="questionFont" id="content"></p>
+          </div>
+        </form>
+      </div>
+      <div class="questionColumn">
+        <form id="search_student">
+          <p class="questionFont">Student ID:</p> 
+          <input type="text" name="student_id" placeholder="Student ID"><br>
+          <button type="submit">Search Specific Student</button>
+          <h3 class="warningFont" id="content"></h3>
+        </form>
+      </div>
+      <div class="questionColumn">
+        <form id="add_student">
+          <p class="questionFont">Student ID:</p>
+          <input type="text" name="student_id" placeholder="Student ID"><br>
+          <p class="questionFont">Student Name:</p>
+          <input type="text" name="student_name" placeholder="Student Name"><br>
+          <button type="submit">Add New Student</button>
+        </form>
+      </div>
+      <div class="questionColumn">
+        <form id="del_student">
+          <p class="questionFont">Student ID:</p>
+          <input type="text" name="student_id" placeholder="Student ID"><br>
+          <button type="submit">Delete Specific Student</button>
+        </form>
+      </div>
+      <div class="questionColumn">
+        <p class="warningFont" id="message"></p>
+      </div>
+    </div>  
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="index.js"></script>
+  </div>
   </body>
 </html>
 

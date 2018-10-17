@@ -23,7 +23,7 @@ app.get("/search_student_send", function(req, res){
     console.log(`ID=${req.query.student_id} Name=${studentInfo[req.query.student_id]} Login`);
   }
   else{
-    res.send(`ID= ${studentInfo[req.query.student_id]} not found`);
+    res.send(`ID= ${req.query.student_id} not found`);
     console.log(`ID=${req.query.student_id} try to login but not found`);
   }
 })
@@ -39,10 +39,10 @@ app.get("/list_student_req", function(req, res){
 app.get("/add_student_req", function(req, res){
   console.log("Get add_student request");
   if(findItem(req.query.student_id, studentInfo))
-    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} already found`);
+    var messages = (`Student ID= ${req.query.student_id}, name= ${studentInfo[req.query.student_id]} already found`);
   else{
-    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} added successfully`);
     studentInfo[req.query.student_id] = req.query.student_name;
+    var messages = (`Student ID= ${req.query.student_id}, name= ${studentInfo[req.query.student_id]} added successfully`);
   }
   res.send(messages);
   console.log(messages);
@@ -51,11 +51,11 @@ app.get("/add_student_req", function(req, res){
 app.get("/del_student_req", function(req, res){
   console.log("Get del_student request");
   if(findItem(req.query.student_id, studentInfo)){
-    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} deleted`);
+    var messages = (`Student ID= ${req.query.student_id}, name= ${studentInfo[req.query.student_id]} deleted`);
     delete studentInfo[req.query.student_id];
   }
   else
-    var messages = (`Student ID= ${item}, name= ${studentInfo[item]} not found`);
+    var messages = (`Student ID= ${req.query.student_id}, name= ${studentInfo[req.query.student_id]} not found`);
   res.send(messages);
   console.log(messages);
 })
