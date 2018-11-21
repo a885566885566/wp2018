@@ -1,3 +1,11 @@
+function check(data){
+  if(data.search('<') >= 0 ){
+    var audio = document.getElementById('trick_audio');
+    audio.play();
+    //alert("Don't try to trick me, otherwise, I trick you.");
+  }
+}
+
 $(document).ready(function(){
   console.log("prepare done");
   $("#search_student button").click(function(event) {
@@ -9,6 +17,7 @@ $(document).ready(function(){
         student_id: $("#search_student input[name='student_id']").val()
       },
       success: function(data){
+        check(data);
         $("#search_student #content").html(data);
     }})
   })
@@ -18,6 +27,7 @@ $(document).ready(function(){
       method: "get",
       url: "./list_student_req",
       success: function(data){
+        check(data);
         $("#list_student #content").html(data);
         $("#list_student #contentDiv").css({height: "0em", overflow:"hidden"});
         $("#list_student #contentDiv").animate({
@@ -38,6 +48,7 @@ $(document).ready(function(){
         student_name: $("#add_student input[name='student_name']").val()
       },
       success: function(data){
+        check(data);
         $("#message").html(data);
       }
     })
@@ -51,6 +62,7 @@ $(document).ready(function(){
         student_id: $("#del_student input[name='student_id']").val(),
       },
       success: function(data){
+        check(data);
         $("#message").html(data);
       }
     })
